@@ -1,4 +1,6 @@
 class Solution(object):
+
+# ...............ans1......................
     def isisomorphic(str1, str2):
         if len(str1) != len(str2):
             return False
@@ -15,7 +17,7 @@ class Solution(object):
         return True
 
 
-
+ # ............ans2.....................
     def isStrobogrammatic(self, num):
 
         maps = {("0", "0"), ("1", "1"), ("6", "9"), ("8", "8"), ("9", "6")}
@@ -28,7 +30,7 @@ class Solution(object):
         return True
 
 
-
+# ................ans3.......................
     def addStrings(self, num1, num2):
         result = ""
         carry = 0
@@ -59,7 +61,7 @@ class Solution(object):
 
 
 
-
+# ...................ans4..........................
     def reverseWords(self, string):
         st = list()
         # Traverse given string and push all characters to stack until we see a space.
@@ -79,7 +81,7 @@ class Solution(object):
 
 
 
-
+# .......................ans5............................
     def reverseStr(self, s, k):
         """
         :type s: str
@@ -106,7 +108,7 @@ class Solution(object):
 
 
 
-# ans 6
+# ....................ans 6....................
     def areRotations(self, string1, string2):
         size1 = len(string1)
         size2 = len(string2)
@@ -128,7 +130,7 @@ class Solution(object):
             return False
 
 
-
+# ..........................ans7...........................
     def backspaceCompare(self, S: str, T: str) -> bool:
         def bckspc(string):
             stack=[]
@@ -145,6 +147,12 @@ class Solution(object):
         return (bckspc(S)==bckspc(T))
 
 
+
+# ...........................ans8..........................
+
+
 obj = Solution()
 ans = obj.backspaceCompare('ab##ac','a#b#ac')
 print(ans)
+
+
