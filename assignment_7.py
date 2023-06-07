@@ -150,9 +150,33 @@ class Solution(object):
 
 # ...........................ans8..........................
 
+# Function to check if a straight line
+# can be formed using N points
+    def isStraightLinePossible(self, arr, n):
+        # First pair of point (x0, y0)
+        x0 = arr[0][0]
+        y0 = arr[0][1]
+
+        # Second pair of point (x1, y1)
+        x1 = arr[1][0]
+        y1 = arr[1][1]
+
+        dx = x1 - x0
+        dy = y1 - y0
+
+        # Loop to iterate over the points
+        for i in range(n):
+            x = arr[i][0]
+            y = arr[i][1]
+            if (dx * (y - y1) != dy * (x - x1)):
+                return False
+        return True
+
+arr = [[0, 0], [1, 1],
+           [3, 3], [2, 2]]
 
 obj = Solution()
-ans = obj.backspaceCompare('ab##ac','a#b#ac')
+ans = obj.isStraightLinePossible(arr, 4)
 print(ans)
 
 
