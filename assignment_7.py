@@ -1,6 +1,12 @@
 class Solution(object):
 
 # ...............ans1......................
+
+#Given two strings s and t, *determine if they are isomorphic*.
+# Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+# All occurrences of a character must be replaced with another character while preserving the order of characters.
+# No two characters may map to the same character, but a character may map to itself.
+
     def isisomorphic(str1, str2):
         if len(str1) != len(str2):
             return False
@@ -18,6 +24,9 @@ class Solution(object):
 
 
  # ............ans2.....................
+#Given a string num which represents an integer, return true *if* num *is a **strobogrammatic number***.
+# A **strobogrammatic number** is a number that looks the same when rotated 180 degrees (looked at upside down).
+
     def isStrobogrammatic(self, num):
 
         maps = {("0", "0"), ("1", "1"), ("6", "9"), ("8", "8"), ("9", "6")}
@@ -31,6 +40,10 @@ class Solution(object):
 
 
 # ................ans3.......................
+#Given two non-negative integers, num1 and num2 represented as string, return *the sum of* num1 *and* num2 *as a string*.
+# You must solve the problem without using any built-in library for handling large integers (such as BigInteger).
+# You must also not convert the inputs to integers directly.
+
     def addStrings(self, num1, num2):
         result = ""
         carry = 0
@@ -62,6 +75,9 @@ class Solution(object):
 
 
 # ...................ans4..........................
+# Given a string s, reverse the order of characters in each word within a sentence
+# while still preserving whitespace and initial word order.
+
     def reverseWords(self, string):
         st = list()
         # Traverse given string and push all characters to stack until we see a space.
@@ -82,6 +98,10 @@ class Solution(object):
 
 
 # .......................ans5............................
+#Given a string s and an integer k, reverse the first k characters for every 2k characters counting from the start of the string.
+# If there are fewer than k characters left, reverse all of them. If there are less than 2k but
+# greater than or equal to k characters,then reverse the first k characters and leave the other as original.
+
     def reverseStr(self, s, k):
         """
         :type s: str
@@ -109,6 +129,9 @@ class Solution(object):
 
 
 # ....................ans 6....................
+# Given two strings s and goal, return true *if and only if* s *can become* goal *after some number of **shifts** on* s.
+# A **shift** on s consists of moving the leftmost character of s to the rightmost position.
+
     def areRotations(self, string1, string2):
         size1 = len(string1)
         size2 = len(string2)
@@ -131,6 +154,10 @@ class Solution(object):
 
 
 # ..........................ans7...........................
+# Given two strings s and t, return true *if they are equal when both are typed into empty text editors*.
+# '#' means a backspace character.
+# Note that after backspacing an empty text, the text will continue empty.
+
     def backspaceCompare(self, S: str, T: str) -> bool:
         def bckspc(string):
             stack=[]
@@ -149,9 +176,7 @@ class Solution(object):
 
 
 # ...........................ans8..........................
-
-# Function to check if a straight line
-# can be formed using N points
+# Function to check if a straight line can be formed using N points
     def isStraightLinePossible(self, arr, n):
         # First pair of point (x0, y0)
         x0 = arr[0][0]
