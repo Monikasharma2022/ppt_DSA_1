@@ -24,6 +24,36 @@ class Solution(object):
         return dp[len(s1)%2][-1]
 
 
+# ..............ans 2....................
+    def checkValidString(self, s: str) -> bool:
+        open_count, close_count = 0, 0
+        length = len(s) - 1
+        for i in range(length + 1):
+            if s[i] == '(' or s[i] == '*':
+                open_count += 1
+            else:
+                open_count -= 1
+            if s[length - i] == ')' or s[length - i] == '*':
+                close_count += 1
+            else:
+                close_count -= 1
+            if open_count < 0 or close_count < 0:
+                return False
+        return True
+
+
+# ......................ans 3......................
+    def minDistance(self, W1: str, W2: str) -> int:
+        m, n = len(W1), len(W2)
+        if m < n: W1, W2, m, n = W2, W1, n, m
+        dpLast, dpCurr = [0] * (n + 1), [0] * (n + 1)
+        for c1 in W1:
+            for j in range(n):
+                dpCurr[j + 1] = dpLast[j] + 1 if c1 == W2[j] else max(dpCurr[j], dpLast[j + 1])
+            dpLast, dpCurr = dpCurr, dpLast
+        return m + n - 2 * dpLast[n]
+
+
 obj = Solution()
-ans = obj.minimumDeleteSum('leet', 'delete')
+ans = obj.minimumDeleteSum('sea','eat')
 print(ans)
